@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Draft 3</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <h1><span id="number1">{{ number1 }} </span></h1>
+    <form action="/rand_num1/" method="POST">
+        <button class="button" name="new_rand1" type="submit"><span>new rand (1-50)</span></button>
+    </form>
+    <h1><span id="number2">{{ number2 }} </span></h1>
+    <form action="/rand_num2/" method="POST">
+      <button class="button" name="new_rand2" type="submit"><span>new rand (50-100)</span></button>
+  </form>
+  <h1><span id="number3">{{ number3 }} </span></h1>
+  <form action="/rand_num3/" method="POST">
+    <button class="button" name="new_rand3" type="submit"><span>new rand (100-50)</span></button>
+</form>
+</body>
