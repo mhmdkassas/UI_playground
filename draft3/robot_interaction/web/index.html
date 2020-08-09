@@ -9,9 +9,167 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <h1><span id="number1">{{ number1 }} </span></h1>
+
+  <div class="container">
+    <div class="d-flex flex-row">
+      <div id="baseCont_sensorStat" class="col">
+        <div id="baseC_title" class="d-flex flex-row">
+          <h1>Base Control</h1>
+        </div>
+        <div id="move_title" class="d-flex flex-row">
+          <h3>Move</h3>
+        </div>
+        <div id="x_number1" class="d-flex flex-row">
+          <div id="x" class="col">
+            <!-- insert x GET button -->
+            <button class="button" name="new_rand1" type="submit"><span>TBA</span></button>
+          </div>
+          <div id="number1" class="col">
+            <h3>{{ move_x_num }}</h3>
+          </div>
+        </div>
+        <div id="y_number2" class="d-flex flex-row">
+          <div id="y" class="col">
+            <!-- insert y Get button -->
+            <button class="button" name="new_rand1" type="submit"><span>TBA</span></button>
+          </div>
+          <div id="number2" class="col">
+            <h3>{{ move_y_num }}</h3>
+          </div>
+        </div>
+        <div id="dash" class="d-flex flex-row">
+          <h3> --------------- </h3>
+        </div>
+        <div id="sensor_stat" class="d-flex flex-row">
+          <h3>Sensor Status</h3>
+        </div>
+        <div id="sonar_IR" class="d-flex flex-row">
+          <div id="sonar" class="col">
+            <!-- insert sonar button POST-->
+            <button class="button" name="new_rand1" type="submit"><span>TBA</span></button>
+          </div>
+          <div id ="sonar_num" class="col">
+            <h3>{{ sonar_num }}</h3>
+          </div>
+          <div id="IR" class="col">
+            <!-- insert IR button POST -->
+            <button class="button" name="new_rand1" type="submit"><span>TBA</span></button>
+          </div>
+          <div id = "IR_num" class="col">
+            <h3>{{ IR_num }}</h3>
+          </div>
+        </div>
+        <div id="encoders_jointX" class="d-flex flex-row">
+          <div id="encoders" class="col">
+            <!-- insert encoders button POST -->
+            <button class="button" name="new_rand1" type="submit"><span>TBA</span></button>
+          </div>
+          <div id="encoders_num" class="col">
+            <h3>{{ encoders_num }}</h3>
+          </div>
+          <div id="jointX" class="col">
+            <!-- insert jointX button POST -->
+            <button class="button" name="new_rand1" type="submit"><span>TBA</span></button>
+          </div>
+          <div id="joinX_num" class="col">
+            <h3>{{ jointX_num }}</h3>
+          </div>
+        </div>
+        <div id="jointY_jointZ" class="d-flex flex-row">
+          <div id="jointY" class="col">
+            <!-- insert jointY button POSt -->
+            <button class="button" name="new_rand1" type="submit"><span>TBA</span></button>
+          </div>
+          <div id="jointY_num" class="col">
+            <h3>{{ jointY_num }}</h3>
+          </div>
+          <div id="jointZ" class="col">
+            <!-- insert jointZ button POST -->
+            <button class="button" name="new_rand1" type="submit"><span>TBA</span></button>
+          </div>
+          <div id="jointZ_num" class="col">
+            <h3>{{ jointZ_num }}</h3>
+          </div>
+        </div>
+        
+      </div>
+      <div id="armCont_home" class="col">
+        <div id="armCont" class="d-flex flex-row">
+          <!-- insert arm control title -->
+          <h1>Arm Control</h1>
+        </div>
+        <div id="jointA" class="d-flex flex-row">
+          <div id="jointA_button" class="col">
+            <!-- insert jointA button GET -->
+            <button class="button" name="new_rand1" type="submit"><span>TBA</span></button>
+          </div>
+          <div id="jointA_num" class="col">
+            <h3>{{ jointA_num }}</h3>
+          </div>
+        </div>
+        <div id="jointB" class="d-flex flex-row">
+          <div id="jointB_button" class="col">
+            <!-- insert jointB button GET -->
+            <button class="button" name="new_rand1" type="submit"><span>TBA</span></button>
+          </div>
+          <div id="jointB_num" class="col">
+            <h3>{{ jointB_num }}</h3>
+          </div>
+        </div>
+        <div id="jointC" class="d-flex flex-row">
+          <div id="jointC_button" class="col">
+            <!-- insert jointC button -->
+            <button class="button" name="new_rand1" type="submit"><span>TBA</span></button>
+          </div>
+          <div id="jointC_num" class="col">
+            <h3>{{ jointC_num }}</h3>
+          </div>
+        </div>
+        <div id="jointD" class="d-flex flex-row">
+          <div id="jointD_button" class="col">
+            <!-- insert jointD button -->
+            <button class="button" name="new_rand1" type="submit"><span>TBA</span></button>
+          </div>
+          <div id="jointD_num" class="col">
+            <h3>{{ jointD_num }}</h3>
+          </div>
+        </div>
+        <div id="home_title" class="d-flex flex-row">
+          <h3>Home</h3>
+        </div>
+        <div id="x_home" class="d-flex flex-row">
+          <div id="x_button" class="col">
+            <!-- insert button here GET -->
+            <button class="button" name="new_rand1" type="submit"><span>TBA</span></button>
+          </div>
+          <div id="x_num" class="col">
+            <h3>{{ home_x_num }}</h3>
+          </div>
+        </div>
+        <div id="y_home" class="d-flex flex-row">
+          <div id="y_button" class="col">
+            <!-- insert button here -->
+            <button class="button" name="new_rand1" type="submit"><span>TBA</span></button>
+          </div>
+          <div id="y_num" class="col">
+            <h3>{{ home_y_num }}</h3>
+          </div>
+        </div>
+        <div id="z_home" class="d-flex flex-row">
+          <div id="z_button" class="col">
+            <!-- insert button here -->
+            <button class="button" name="new_rand1" type="submit"><span>TBA</span></button>
+          </div>
+          <div id="z_num" class="col">
+            <h3>{{ home_z_num }}</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- <h1><span id="number1">{{ number1 }} </span></h1>
     <form action="/rand_num1/" method="POST">
-        <button class="button" name="new_rand1" type="submit"><span>new rand (1-50)</span></button>
+        <button class="button" name="new_rand1" type=``"submit"><span>new rand (1-50)</span></button>
     </form>
     <h1><span id="number2">{{ number2 }} </span></h1>
     <form action="/rand_num2/" method="POST">
@@ -20,5 +178,5 @@
   <h1><span id="number3">{{ number3 }} </span></h1>
   <form action="/rand_num3/" method="POST">
     <button class="button" name="new_rand3" type="submit"><span>new rand (100-50)</span></button>
-</form>
+</form> -->
 </body>

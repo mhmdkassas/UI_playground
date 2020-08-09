@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Robot Interaction</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="d-flex flex-row">
+        <div class="d-flex flex-col">
+            <div class="container">
+                    <div class="d-flex flex-row ">
+                        <div class="col">
+                            <h2>Digital Sensor</h2>   
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row">
+                        <div class="d-flex flex-column">
+                            <form action="/GPIO1/" method="POST">
+                                <button class="button" name="gpio1_button" type="submit"><span>GPIO1</span></button>                            
+                            </form>
+                        </div>
+                        <div class="d-flex flex-column ml-4">
+                            <h3>{{ GPIO1 }}</h3>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row align-justify">
+                        <div class="d-flex flex-column">
+                            <form action="/GPIO2/" method="POST">
+                                <button class="button" name="gpio2_button" type="submit"><span>GPIO2</span></button>                            
+                            </form>
+                        </div>
+                        <div class="d-flex flex-column ml-4">
+                            <h3>{{ GPIO2 }}</h3>
+                        </div>
+                    </div>    
+                    <div class="d-flex flex-row ">
+                        <div class="col">
+                            <h2>--------------</h2>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row ">
+                        <div class="col">
+                            <h2>Sensor Status</h2>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row">
+                        <div class="d-flex flex-column">
+                            <form action="/ultrasonic/" method="POST">
+                                <button class="button" name="ultrasonic_button" type="submit"><span>Ultrasonic</span></button>                            
+                            </form>
+                        </div>
+                        <div class="d-flex flex-column">
+                            <h3>{{ ultrasonic }}</h3>
+                        </div>
+                        <div class="d-flex flex-column">
+                            <form action="/infrared/" method="POST">
+                                <button class="button" name="infrared_button" type="submit"><span>Infrared</span></button>                            
+                            </form>
+                        </div>
+                        <div class="d-flex flex-column">
+                            <h3>{{ IR }}</h3>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row">
+                        <div class="d-flex flex-column">
+                            <form action="/encoders/" method="POST">
+                                <button class="button" name="encoders_button" type="submit"><span>Encoders</span></button>                            
+                            </form>
+                        </div>
+                        <div class="d-flex flex-column">
+                            <h3>{{ encoders }}</h3>
+                        </div>
+                        <div class="d-flex flex-column">
+                            <form action="/jointx1/" method="POST">
+                                <button class="button" name="jointx1_button" type="submit"><span>Joint X1</span></button>                            
+                            </form>
+                        </div>
+                        <div class="d-flex flex-column">
+                            <h3>{{ jointx1 }}</h3>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row">
+                        <div class="d-flex flex-column">
+                            <form action="/jointx2/" method="POST">
+                                <button class="button" name="jointx2_button" type="submit"><span>Joint X2</span></button>                            
+                            </form>
+                        </div>
+                        <div class="d-flex flex-column">
+                            <h3>{{ jointx2 }}</h3>
+                        </div>
+                        <div class="d-flex flex-column">
+                            <form action="/jointx3/" method="POST">
+                                <button class="button" name="jointx3_button" type="submit"><span>Joint X3</span></button>                            
+                            </form>
+                        </div>
+                        <div class="d-flex flex-column">
+                            <h3>{{  jointx3 }}</h3>
+                        </div>
+                    </div>    
+            </div>
+        </div>
+        <div class="d-flex flex-col">
+            <div class="container">
+                <div class="d-flex flex-row ">
+                    <div class="col">
+                        <h2>Analogue Sensor</h2>
+                    </div>
+                </div>
+                    <div class="d-flex flex-row">
+                        <div class="d-flex flex-column">
+                            <form action="/us1/" method="POST">
+                                <button class="button" name="us1_button" type="submit"><span>US1</span></button>                            
+                            </form>
+                        </div>
+                        <div class="d-flex flex-column">
+                            <div class="d-flex flex-column">
+                                <h3>{{ US1 }}</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row">
+                        <div class="d-flex flex-column">
+                            <form action="/us2/" method="POST">
+                                <button class="button" name="us2_button" type="submit"><span>US2</span></button>                            
+                            </form>
+                        </div>
+                        <div class="d-flex flex-column">
+                            <div class="d-flex flex-column">
+                                <h3>{{ US2 }}</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row">
+                        <div class="d-flex flex-column">
+                            <form action="/us3/" method="POST">
+                                <button class="button" name="us3_button" type="submit"><span>US3</span></button>                            
+                            </form>
+                        </div>
+                        <div class="d-flex flex-column">
+                            <div class="d-flex flex-column">
+                                <h3>{{ US3 }}</h3>
+                            </div>
+                        </div>
+                    </div>    
+                    <div class="d-flex flex-row">
+                        <div class="d-flex flex-column">
+                            <form action="/us4/" method="POST">
+                                <button class="button" name="us4_button" type="submit"><span>US4</span></button>                            
+                            </form>
+                        </div>
+                        <div class="d-flex flex-column">
+                            <div class="d-flex flex-column">
+                                <h3>{{ US4 }}</h3>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="d-flex flex-row">
+                        <div class="d-flex flex-column">
+                            <form action="/left/" method="POST">
+                                <button class="button" name="left_button" type="submit"><span>left</span></button>                            
+                            </form>
+                        </div>
+                        <div class="d-flex flex-column">
+                            <div class="d-flex flex-column">
+                                <h3>{{ left }}</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row">
+                        <div class="d-flex flex-column">
+                            <form action="/center/" method="POST">
+                                <button class="button" name="center_button" type="submit"><span>Center</span></button>                            
+                            </form>
+                        </div>
+                        <div class="d-flex flex-column">
+                            <div class="d-flex flex-column">
+                                <h3>{{ center }}</h3>
+                            </div>
+                        </div>
+                    </div>  
+                    <div class="d-flex flex-row">
+                        <div class="d-flex flex-column">
+                            <form action="/right/" method="POST">
+                                <button class="button" name="right_button" type="submit"><span>Right</span></button>                            
+                            </form>
+                        </div>
+                        <div class="d-flex flex-column">
+                            <div class="d-flex flex-column">
+                                <h3>{{ right }}</h3>
+                            </div>
+                        </div>
+                    </div> 
+            </div>
+        </div>
+    </div>
+      
+      
+     
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
