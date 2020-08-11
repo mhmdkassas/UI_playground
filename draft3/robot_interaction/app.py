@@ -21,21 +21,40 @@ class Draft3:
         def index():
             return render_template('index.html')
 
-        @app.route("/rand_num1/", methods=['GET', 'POST'])
-        def get_rand_num1():
-            self.n1 = random.randint(1, 50)
-            return render_template('index.html', number1 = self.n1, number2 = self.n2, number3 = self.n3)
+        @app.route("/move_xy/", methods=['GET', 'POST'])
+        def move_xy():
+            x = request.form["move_x"]
+            y = request.form["move_y"]
+            print("x: " + x)
+            print("y: " + y)
+            return render_template("index.html")
 
-        @app.route("/rand_num2/", methods=['GET', 'POST'])
-        def get_rand_num2():
-            self.n2 = random.randint(50, 100)
-            return render_template('index.html',number1 = self.n1, number2 = self.n2, number3 = self.n3)
+        @app.route("/arm_cont/", methods=['GET', 'POST'])
+        def control_arm():
+            joint1 = request.form["joint1"]
+            joint2 = request.form["joint2"]
+            joint3 = request.form["joint3"]
+            joint4 = request.form["joint4"]
 
-        @app.route("/rand_num3/", methods=['GET', 'POST'])
-        def get_rand_num3():
-            self.n3 = random.randint(100, 150)
-            return render_template('index.html',number1 = self.n1, number2 = self.n2, number3 = self.n3)   
+            print("joint1" + joint1)
+            print("joint2" + joint2)
+            print("joint3" + joint3)
+            print("joint4" + joint4)
 
+            return render_template("index.html")
+        
+        @app.route("/home/", methods=['GET', 'POST'])
+        def home_coord():
+            x = request.form["home_x"]
+            y = request.form["home_y"]
+            z = request.form["home_z"]
+
+            print("x: " + x)
+            print("y: " + y)
+            print("z: " + z)
+
+            return render_template("index.html")
+            
         app.run()
 
 if __name__ == '__main__':
