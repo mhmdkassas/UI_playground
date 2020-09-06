@@ -8,113 +8,150 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <div class="d-flex flex-row">
-        <div class="d-flex flex-col">
-            <div class="container">
-                    <div class="d-flex flex-row ">
-                        <div class="d-flex flex-column">
-                            <h2>Base Control</h2>
-                        </div>
-                    </div>
-                    <div class="d-flex flex-row">
-                        <div class="d-flex flex-column">
-                          <h3>Movement</h3>
-                        </div>
-                    </div>
-                    <div class="d-flex flex-row">
-                        <form action="/move_xy/" method="POST">
-                          <p>X:  
-                            <input type="number" name="move_x" style="width: 50px"/>
-                            <br>
-                            Y: <input type="number" name="move_y" style="width: 50px"/>
-                            <br><br>
-                            <input type="submit" value="submit" />
-                          </p>
-                        </form>
-                    </div>
-        
-                    <div class="d-flex flex-row ">
-                        <div class="d-flex flex-column">
-                            <h3>Sensor Status</h3>
-                        </div>
-                    </div>
-                    <div class="d-flex flex-row">
-                        <div class="d-flex flex-column">
-                            <button class="btn btn-dark m-1">Ultrasonic</button>
-                        </div>
-                        <div class="d-flex flex-column">
-                            <button class="btn btn-dark m-1">IR</button>
-                        </div>
-                    </div>
-                    <div class="d-flex flex-row">
-                        <div class="d-flex flex-column">
-                            <button class="btn btn-dark m-1">Encoders</button>
-                        </div>
-                        <div class="d-flex flex-column">
-                            <button class="btn btn-dark m-1">Joint X</button>
-                        </div>
-                    </div>
-                    <div class="d-flex flex-row">
-                        <div class="d-flex flex-column">
-                            <button class="btn btn-dark m-1">Joint X</button>
-                        </div>
-                        <div class="d-flex flex-column">
-                            <button class="btn btn-dark m-1">Joint X</button>
-                        </div>
-                    </div>    
-            </div>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top" id="main-nav">
+        <div class="container">
+          <a href="index.html" class="navbar-brand"><img source="/Sager Education Logo.png"></a>
+          <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a href="#home" class="nav-link">Home</a>
+              </li>
+              <li class="nav-item">
+                <a href="#status" class="nav-link">Status</a>
+              </li>
+              <li class="nav-item">
+                <a href="#arm" class="nav-link">Arm</a>
+              </li>
+              <li class="nav-item">
+                <a href="#programming" class="nav-link">Programming</a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="d-flex flex-col">
-            <div class="container">
-                <div class="d-flex flex-row ">
-                    <div class="d-flex flex-column">
-                        <h2>Arm Control</h2>
-                    </div>
+      </nav>
+      <section id="interaction">
+        <div class="container" id="robot-interaction">
+          <div class="row">
+            <div class="col">
+              <h1>Robot Interaction</h1>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col-sm-6">
+              <h3>Base Control</h3>
+              <h4>Move</h4>
+              <div class="row">
+                <div class="col-6">
+                  <button class="btn button" name="move_x" type="submit"><span>X</span></button>
                 </div>
-                    
-                    <div class="d-flex flex-row">
-                        <form action="/arm_cont/" method="POST">
-                          <p>
-                            Joint 1: <input type="number" name="joint1" style="width: 50px" />
-                            <br>
-                            Joint 2: <input type="number" name="joint2" style="width: 50px" />
-                            <br>
-                            Joint 3: <input type="number" name="joint3" style="width: 50px" />
-                            <br>
-                            Joint 4: <input type="number" name="joint4" style="width: 50px" />
-                            <br>
-                            <br>
-                            <input type="submit" value="submit" />
-                          </p>
-                        </form>
-                    </div>
-                    
-                    <div class="d-flex flex-row ">
-                        <div class="d-flex flex-column">
-                            <h3>Home</h3>
-                        </div>
-                    </div> 
-                    <div class="d-flex flex-row">
-                      <form action="/home/" method="POST">
-                        <p>
-                          X: <input type="number" name="home_x" style="width: 50px" />
-                          <br>
-                          Y: <input type="number" name="home_y" style="width: 50px" />
-                          <br>
-                          Z: <input type="number" name="home_z" style="width: 50px" />
-                          <br>
-                          <input type="submit" value="submit" />
-                        </p>
-                      </form>
-                    </div>
-                    
+                <div class="col-6">
+                  <button class="btn button" name="num_move_x" type="submit">num_x<span></span></button>
+                </div>
+                <p><br></p>
+                <div class="col-6">
+                  <button class="btn button" name="move_y" type="submit"><span>Y</span></button>
+                </div>
+                <div class="col-6">
+                  <button class="btn button" name="num_move_y" type="submit"><span>num_y</span></button>
+                </div>
+                <p><br><br></p>
+                <div class="col-12">
+                  <h3>Sensor Status</h3>
+                </div>
+                <div class="col-3">
+                  <form action="/ultrasonic/" method="POST">
+                    <button class="btn button" name="ultrasonic" type="submit"><span>Sonar</span></button>
+                  </form>
+                </div>
+                <div class="col-3">
+                  <h3 id="ultrasonic_num">{{ ultrasonic }}</h3>
+                </div>
+                <div class="col-3">
+                  <form action="/infrared/" method="POST">
+                    <button class="btn button" name="infrared" type="submit"><span>IR</span></button>
+                  </form>
+                </div>
+                <div class="col-3">
+                  <h3 id="infrared_num">{{ infrared }}</h3>
+                </div>
+                <p><br></p>
+                <div class="col-3">
+                  <form action="/encoders/" method="POST">
+                    <button class="btn button" name="encoders" type="submit"><span>Encdrs</span></button>
+                  </form>
+                </div>
+                <div class="col-3">
+                  <h3 id="encoders_num">{{ encoders }}</h3>
+                </div>
+                <div class="col-3">
+                  <form action="/jointx/" method="POST">
+                    <button class="btn button" name="joint_x" type="submit"><span>J_X</span></button>
+                  </form>
+                </div>
+                <div class="col-3">
+                  <h3 id="joint_x">{{ jointx1 }}</h3>
+                </div>
+                <p><br></p>
+                <div class="col-3">
+                  <form action="/jointy/" method="POST">
+                    <button class="btn button" name="joint_y" type="submit"><span>J_Y</span></button>
+                  </form>
+                </div>
+                <div class="col-3">
+                  <h3 id="joint_y">{{ jointx2 }}</h3>
+                </div>
+                <div class="col-3">
+                  <form action="/jointz/" method="POST">
+                    <button class="btn button" name="joint_z" type="submit"><span>J_Z</span></button>
+                  </form>
+                </div>
+                <div class="col-3">
+                  <h3 id="joint_z">{{ jointx3 }}</h3>
+                </div>
+                
+                <p><br><br></p>
+                
+              </div>
             </div>
+            <div class="col-sm-6">
+              <div class="row">
+                <div class="col-12">
+                  <h3>Home</h3>
+                </div>
+                <div class="col-6">
+                  <button class="btn button" name="home_x" type="submit"><span>X</span></button>
+                </div>
+                <div class="col-6">
+                  <button class="btn button" name="num_home_x" type="submit"><span>num_x</span></button>
+                </div>
+                <p><br></p>
+                <div class="col-6">
+                  <button class="btn button" name="home_y" type="submit"><span>Y</span></button>
+                </div>
+                <div class="col-6">
+                  <button class="btn button" name="num_home_y" type="submit"><span>num_y</span></button>
+                </div>
+                <p><br></p>
+                <div class="col-6">
+                  <button class="btn button" name="home_z" type="submit"><span>Z</span></button>
+                </div>
+                <div class="col-6">
+                  <button class="btn button" name="num_home_z" type="submit"><span>num_z</span></button>
+                </div>
+            </div>
+            
+          </div>
+          
         </div>
-    </div>
-      
-      
+        <p><br></p>
+      </section>
      
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
