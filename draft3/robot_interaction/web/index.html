@@ -8,7 +8,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ url_for('static', filename='/style.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}" />
   </head>
   <body>
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top" id="main-nav">
@@ -35,8 +35,9 @@
           </div>
         </div>
       </nav>
-      <section id="interaction">
-        <div class="container" id="robot-interaction">
+      <p><br><br><br></p>
+      <section id="rob_int">
+        <div class="container" id="robot_interaction">
           <div class="row">
             <div class="col">
               <h1>Robot Interaction</h1>
@@ -48,11 +49,18 @@
               <h3>Base Control</h3>
               <h4>Move</h4>
               <div class="row">
-                <form action="/move_xy/" method="POST">
+                  <form action="/move_xy/" method="POST">
                   <p>
-                    X: <input type="number" name="num_x" style="width: 50px" />
-                    Y: <input type="number" name="num_y" style="width: 50px" />
-                    <input type="submit" value="submit" />
+                    <div class="col">
+                      X: <input type="number" name="num_x" style="width: 50px" />
+                    </div>
+                    <div class="col">
+                      Y: <input type="number" name="num_y" style="width: 50px" />
+                    </div>
+                    <br>
+                      <div class="col">
+                        <input type="submit" value="submit" />
+                      </div>
                   </p>
                 </form>
                 <p><br><br></p>
@@ -123,8 +131,11 @@
                   <form action="/home/" method="POST">
                     <p>
                       X: <input type="number" name="home_x" style="width: 50px" />
+                      <br>
                       Y: <input type="number" name="home_y" style="width: 50px" />
+                      <br>
                       Z: <input type="number" name="home_z" style="width: 50px" />
+                      <br><br>
                       <input type="submit" value="submit"/>
                     </p>
                   </form>

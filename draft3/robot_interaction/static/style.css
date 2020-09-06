@@ -11,11 +11,6 @@ body{
 
 
 .btn{
-    width: 90px;
+    width: 10px;
     background-color: #fff;
 }
-
-#interaction{
-    margin-top:150px;
-}
-
