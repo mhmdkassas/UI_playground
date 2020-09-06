@@ -11,12 +11,10 @@ body{
 
 
 .btn{
-    color: #000;
-    background: #fff;
-    margin: 5px;
-    width: 70px;
+    width: 90px;
+    background-color: #fff;
 }
 
-#status{
-    margin: 150px;
-}
+/* #arm_control{
+    margin-top: 150px;
+} */

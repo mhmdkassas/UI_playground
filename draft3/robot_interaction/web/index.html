@@ -8,7 +8,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/style.css') }}" />
   </head>
   <body>
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top" id="main-nav">
@@ -48,25 +48,19 @@
               <h3>Base Control</h3>
               <h4>Move</h4>
               <div class="row">
-                <div class="col-6">
-                  <button class="btn button" name="move_x" type="submit"><span>X</span></button>
-                </div>
-                <div class="col-6">
-                  <button class="btn button" name="num_move_x" type="submit">num_x<span></span></button>
-                </div>
-                <p><br></p>
-                <div class="col-6">
-                  <button class="btn button" name="move_y" type="submit"><span>Y</span></button>
-                </div>
-                <div class="col-6">
-                  <button class="btn button" name="num_move_y" type="submit"><span>num_y</span></button>
-                </div>
+                <form action="/move_xy/" method="POST">
+                  <p>
+                    X: <input type="number" name="num_x" style="width: 50px" />
+                    Y: <input type="number" name="num_y" style="width: 50px" />
+                    <input type="submit" value="submit" />
+                  </p>
+                </form>
                 <p><br><br></p>
                 <div class="col-12">
                   <h3>Sensor Status</h3>
                 </div>
                 <div class="col-3">
-                  <form action="/ultrasonic/" method="POST">
+                  <form action="/ultrasonic/" method="GET">
                     <button class="btn button" name="ultrasonic" type="submit"><span>Sonar</span></button>
                   </form>
                 </div>
@@ -125,25 +119,15 @@
                 <div class="col-12">
                   <h3>Home</h3>
                 </div>
-                <div class="col-6">
-                  <button class="btn button" name="home_x" type="submit"><span>X</span></button>
-                </div>
-                <div class="col-6">
-                  <button class="btn button" name="num_home_x" type="submit"><span>num_x</span></button>
-                </div>
-                <p><br></p>
-                <div class="col-6">
-                  <button class="btn button" name="home_y" type="submit"><span>Y</span></button>
-                </div>
-                <div class="col-6">
-                  <button class="btn button" name="num_home_y" type="submit"><span>num_y</span></button>
-                </div>
-                <p><br></p>
-                <div class="col-6">
-                  <button class="btn button" name="home_z" type="submit"><span>Z</span></button>
-                </div>
-                <div class="col-6">
-                  <button class="btn button" name="num_home_z" type="submit"><span>num_z</span></button>
+                <div class="col-12">
+                  <form action="/home/" method="POST">
+                    <p>
+                      X: <input type="number" name="home_x" style="width: 50px" />
+                      Y: <input type="number" name="home_y" style="width: 50px" />
+                      Z: <input type="number" name="home_z" style="width: 50px" />
+                      <input type="submit" value="submit"/>
+                    </p>
+                  </form>
                 </div>
             </div>
             
