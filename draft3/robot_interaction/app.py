@@ -2,6 +2,7 @@ from flask import Flask, render_template, Response, request, redirect, url_for
 from threading import Thread
 import random
 import os
+import cv2
 class Draft3:
     def __init__(self):
         self.init_web_server(0, 0, 0, 0, 0, 0)
