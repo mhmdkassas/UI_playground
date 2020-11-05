@@ -1,0 +1,14 @@
+html, body{
+    overflow: hidden;
+    background: #333;
+}
+
+img{
+    background-size: 100%;
+    min-width: 100%;
+}
+
+.img-fluid{
+    width: 80px;
+    height: 60px;
+}

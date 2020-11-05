@@ -1,0 +1,27 @@
+body{
+    background: #333;
+    color: #fff;
+    padding-bottom:250px;
+  }
+
+.navbar{
+    border-bottom: #008ed6 3px solid;
+    opacity: 0.8;
+}
+
+
+.btn{
+    width: 130px;
+    color: #000;
+    background: #fff;
+    margin: 10px;
+}
+
+#link_buttons{
+    margin:150px;
+}
+
+.img-fluid{
+    width: 80px;
+    height: 60px;
+}

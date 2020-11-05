@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Robot Status</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/robot_status.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top" id="main-nav">
+      <div class="container">
+          <a class="navbar-brand" href="/">
+            <div class = "logo-image"> 
+              <img src="../static/logo_image.jpg" class="img-fluid">
+            </div>
+          </a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a href="{{ url_for('home_page') }}" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="{{ url_for('nav_interaction') }}" class="nav-link">Interaction</a>
+            </li>
+            <li class="nav-item">
+              <a href="{{ url_for('nav_arm') }}" class="nav-link">Arm</a>
+            </li>
+            <li class="nav-item">
+              <a href="{{ url_for('nav_video') }}" class="nav-link">Video Stream</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+      <section id="status">
+        <div class="container" id="robot-status">
+          <div class="row">
+            <div class="col">
+              <h1>Robot Status</h1>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col-sm-6">
+              <h3>Digital Sensor</h3>
+              <div class="row">
+                <div class="col-6">
+                  <form action="/robot_status/" method="POST">
+                    <button class="btn button" name="gpio1_button" type="submit"><span>GPIO1</span></button>
+                  </form>
+                </div>
+                <div class="col-6">
+                  <div class="container" id="gpio1_num">
+                    <p id="gpio1_value">GPIO1</p>
+
+                      <script>
+                          var gpio1_value = document.getElementById("gpio1_value");
+
+                          setInterval(() => {
+                              fetch("{{ url_for('gpio1_feed') }}")
+                              .then(response => {
+                                      response.text().then(t => {gpio1_value.innerHTML = t})
+                                  });
+                              }, 1000);  
+                      </script>
+                  </div>
+                </div>
+                <p><br></p>
+                <div class="col-6">
+                  <form action="/gpio2/" method="POST">
+                    <button class="btn button" name="gpio12_button" type="submit"><span>GPIO12</span></button>
+                  </form>  
+                </div>
+                <div class="col-6">
+                  <p id="gpio2_value">GPIO2</p>
+
+                      <script>
+                          var gpio2_value = document.getElementById("gpio2_value");
+
+                          setInterval(() => {
+                              fetch("{{ url_for('gpio2_feed') }}")
+                              .then(response => {
+                                      response.text().then(t => {gpio2_value.innerHTML = t})
+                                  });
+                              }, 1000);  
+                      </script>
+                </div>
+                <p><br><br></p>
+                <div class="col-12">
+                  <h3>Sensor Status</h3>
+                </div>
+                <div class="col-3">
+                  <form action="/ultrasonic/" method="POST">
+                    <button class="btn button" name="ultrasonic" type="submit"><span>Sonar</span></button>
+                  </form>
+                </div>
+                <div class="col-3">
+                  <p id="sonar_value">SONAR</p>
+
+                      <script>
+                          var sonar_value = document.getElementById("sonar_value");
+
+                          setInterval(() => {
+                              fetch("{{ url_for('sonar_feed') }}")
+                              .then(response => {
+                                      response.text().then(t => {sonar_value.innerHTML = t})
+                                  });
+                              }, 1000);  
+                      </script>
+                </div>
+                <div class="col-3">
+                  <form action="/infrared/" method="POST">
+                    <button class="btn button" name="infrared" type="submit"><span>IR</span></button>
+                  </form>
+                </div>
+                <div class="col-3">
+                  <p id="infrared_value">IR</p>
+
+                      <script>
+                          var infrared_value = document.getElementById("infrared_value");
+
+                          setInterval(() => {
+                              fetch("{{ url_for('infrared_feed') }}")
+                              .then(response => {
+                                      response.text().then(t => {infrared_value.innerHTML = t})
+                                  });
+                              }, 1000);  
+                      </script>
+                </div>
+                <p><br></p>
+                <div class="col-3">
+                  <form action="/encoders/" method="POST">
+                    <button class="btn button" name="encoders" type="submit"><span>Encdrs</span></button>
+                  </form>
+                </div>
+                <div class="col-3">
+                  <p id="encoders_value">ENC</p>
+
+                      <script>
+                          var encoders_value = document.getElementById("encoders_value");
+
+                          setInterval(() => {
+                              fetch("{{ url_for('encoders_feed') }}")
+                              .then(response => {
+                                      response.text().then(t => {encoders_value.innerHTML = t})
+                                  });
+                              }, 1000);  
+                      </script>
+                </div>
+                <div class="col-3">
+                  <form action="/jointx/" method="POST">
+                    <button class="btn button" name="joint_x" type="submit"><span>J_X</span></button>
+                  </form>
+                </div>
+                <div class="col-3">
+                  <p id="jointx_value">joint X</p>
+
+                      <script>
+                          var jointx_value = document.getElementById("jointx_value");
+
+                          setInterval(() => {
+                              fetch("{{ url_for('jointx_feed') }}")
+                              .then(response => {
+                                      response.text().then(t => {jointx_value.innerHTML = t})
+                                  });
+                              }, 1000);  
+                      </script>
+                </div>
+                <p><br></p>
+                <div class="col-3">
+                  <form action="/jointy/" method="POST">
+                    <button class="btn button" name="joint_y" type="submit"><span>J_Y</span></button>
+                  </form>
+                </div>
+                <div class="col-3">
+                  <p id="jointy_value">joint Y</p>
+
+                      <script>
+                          var jointy_value = document.getElementById("jointy_value");
+
+                          setInterval(() => {
+                              fetch("{{ url_for('jointy_feed') }}")
+                              .then(response => {
+                                      response.text().then(t => {jointy_value.innerHTML = t})
+                                  });
+                              }, 1000);  
+                      </script>
+                </div>
+                <div class="col-3">
+                  <form action="/jointz/" method="POST">
+                    <button class="btn button" name="joint_z" type="submit"><span>J_Z</span></button>
+                  </form>
+                </div>
+                <div class="col-3">
+                  <p id="jointz_value">joint Z</p>
+
+                      <script>
+                          var jointz_value = document.getElementById("jointz_value");
+
+                          setInterval(() => {
+                              fetch("{{ url_for('jointz_feed') }}")
+                              .then(response => {
+                                      response.text().then(t => {jointz_value.innerHTML = t})
+                                  });
+                              }, 1000);  
+                      </script>
+                </div>
+                
+                <p><br><br></p>
+                
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <h3>Analog Sensor</h3>
+              <div class="row">
+                <div class="col-6">
+                  <form action="/us1/" method="POST">
+                    <button class="btn button" name="US1" type="submit"><span>US1</span></button>
+                  </form>            
+                </div>
+                <div class="col-6">
+                  <p id="us1_value">US1</p>
+
+                      <script>
+                          var us1_value = document.getElementById("us1_value");
+
+                          setInterval(() => {
+                              fetch("{{ url_for('us1_feed') }}")
+                              .then(response => {
+                                      response.text().then(t => {us1_value.innerHTML = t})
+                                  });
+                              }, 1000);  
+                      </script>
+                </div>
+    
+                <p><br></p>
+                
+                <div class="col-6">
+                  <form action="/us2/" method="POST">
+                    <button class="btn button" name="US2" type="submit"><span>US2</span></button>
+                  </form>
+                </div>
+                <div class="col-6">
+                  <p id="us2_value">US2</p>
+
+                      <script>
+                          var us2_value = document.getElementById("us2_value");
+
+                          setInterval(() => {
+                              fetch("{{ url_for('us2_feed') }}")
+                              .then(response => {
+                                      response.text().then(t => {us2_value.innerHTML = t})
+                                  });
+                              }, 1000);  
+                      </script>
+                </div>
+    
+                <p><br></p>
+    
+                <div class="col-6">
+                  <form action="/us3/" method="POST">
+                    <button class="btn button" name="US3" type="submit"><span>US3</span></button>
+                  </form>
+                </div>
+                <div class="col-6">
+                  <p id="us3_value">US3</p>
+
+                      <script>
+                          var us3_value = document.getElementById("us3_value");
+
+                          setInterval(() => {
+                              fetch("{{ url_for('us3_feed') }}")
+                              .then(response => {
+                                      response.text().then(t => {us3_value.innerHTML = t})
+                                  });
+                              }, 1000);  
+                      </script>
+                </div>
+                
+                <p><br></p>
+    
+                <div class="col-6">
+                  <form action="/us4/" method="POST">
+                    <button class="btn button" name="US4" type="submit"><span>US4</span></button>
+                  </form>
+                </div>
+                <div class="col-6">
+                  <p id="us4_value">US4</p>
+
+                      <script>
+                          var us4_value = document.getElementById("us4_value");
+
+                          setInterval(() => {
+                              fetch("{{ url_for('us4_feed') }}")
+                              .then(response => {
+                                      response.text().then(t => {us4_value.innerHTML = t})
+                                  });
+                              }, 1000);  
+                      </script>
+                </div>
+                <p><br><br></p>
+                <div class="col-12">
+                  <h3>IR</h3>
+                </div>
+                <div class="col-6">
+                  <form action="/left/" method="POST">
+                    <button class="btn button" name="left" type="submit"><span>Left</span></button>
+                  </form>
+                </div>
+                <div class="col-6">
+                  <p id="left_value">Left</p>
+
+                      <script>
+                          var left_value = document.getElementById("left_value");
+
+                          setInterval(() => {
+                              fetch("{{ url_for('left_feed') }}")
+                              .then(response => {
+                                      response.text().then(t => {left_value.innerHTML = t})
+                                  });
+                              }, 1000);  
+                      </script>
+                </div>
+                <p><br></p>
+                <div class="col-6">
+                  <form action="/center/" method="POST">
+                    <button class="btn button" name="center" type="submit"><span>Center</span></button>
+                  </form>
+                </div>
+                <div class="col-6">
+                  <p id="center_value">Center</p>
+
+                      <script>
+                          var center_value = document.getElementById("center_value");
+
+                          setInterval(() => {
+                              fetch("{{ url_for('center_feed') }}")
+                              .then(response => {
+                                      response.text().then(t => {center_value.innerHTML = t})
+                                  });
+                              }, 1000);  
+                      </script>
+                </div>
+                <p><br></p>
+                <div class="col-6">
+                  <form action="/right/" method="POST">
+                    <button class="btn button" name="right" type="submit"><span>Right</span></button>
+                  </form>
+                </div>
+                <div class="col-6">
+                  <p id="right_value">Right</p>
+
+                      <script>
+                          var right_value = document.getElementById("right_value");
+
+                          setInterval(() => {
+                              fetch("{{ url_for('right_feed') }}")
+                              .then(response => {
+                                      response.text().then(t => {right_value.innerHTML = t})
+                                  });
+                              }, 1000);  
+                      </script>
+                </div>
+            </div>
+          </div>
+        </div>
+        <p><br></p>
+      </section>     
+      
+     
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
